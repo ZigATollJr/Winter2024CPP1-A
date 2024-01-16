@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Far Background
+    uniqueID: 99098351
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PlayArea
+    uniqueID: 3248465727
+    locked: 0
+  - name: Foreground
+    uniqueID: 2335558509
     locked: 0
