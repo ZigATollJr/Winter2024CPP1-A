@@ -354,6 +354,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.15, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &62623754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 62623755}
+  m_Layer: 0
+  m_Name: PlayerFireLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &62623755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62623754}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 549573289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &187971826
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +510,7 @@ GameObject:
   - component: {fileID: 221372087}
   - component: {fileID: 221372089}
   - component: {fileID: 221372088}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlatformCollider (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -550,7 +581,7 @@ EdgeCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
@@ -761,7 +792,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 410543044}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -880,7 +911,7 @@ GameObject:
   - component: {fileID: 467056319}
   - component: {fileID: 467056321}
   - component: {fileID: 467056320}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlatformCollider (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -932,7 +963,7 @@ EdgeCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
@@ -1217,9 +1248,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 532856922}
-  - component: {fileID: 532856924}
   - component: {fileID: 532856923}
-  m_Layer: 0
+  - component: {fileID: 532856924}
+  m_Layer: 3
   m_Name: PlatformCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1271,7 +1302,7 @@ EdgeCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
@@ -1391,6 +1422,7 @@ GameObject:
   - component: {fileID: 549573287}
   - component: {fileID: 549573286}
   - component: {fileID: 549573290}
+  - component: {fileID: 549573291}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1469,7 +1501,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &549573288
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1534,7 +1566,10 @@ Transform:
   m_LocalPosition: {x: -5.06, y: -2.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2008509767}
+  - {fileID: 1956308952}
+  - {fileID: 62623755}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &549573290
@@ -1551,6 +1586,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TestMode: 0
   speed: 5
+  jumpforce: 7
+  isGrounded: 0
+  GroundCheck: {fileID: 0}
+  isGroundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  groundCheckRadius: 0.02
+--- !u!95 &549573291
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549573285}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a5bc46133c8238f4ba73e8b44c181275, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &552334050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,7 +1624,7 @@ GameObject:
   m_Component:
   - component: {fileID: 552334051}
   - component: {fileID: 552334052}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundCollider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1638,7 +1701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 554408387}
   - component: {fileID: 554408388}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ExtrusionCollider3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1793,7 +1856,7 @@ GameObject:
   - component: {fileID: 738194674}
   - component: {fileID: 738194676}
   - component: {fileID: 738194675}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlatformCollider (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1864,7 +1927,7 @@ EdgeCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
@@ -1886,7 +1949,7 @@ GameObject:
   - component: {fileID: 823128961}
   - component: {fileID: 823128963}
   - component: {fileID: 823128962}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlatformCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1957,7 +2020,7 @@ EdgeCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
@@ -2013,7 +2076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 844895330}
   - component: {fileID: 844895331}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundCollider4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2279,7 +2342,7 @@ GameObject:
   - component: {fileID: 1097744127}
   - component: {fileID: 1097744129}
   - component: {fileID: 1097744128}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlatformCollider (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2350,7 +2413,7 @@ EdgeCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
@@ -2448,7 +2511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1212881239}
   - component: {fileID: 1212881240}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ExtrusionCollider2.2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2679,7 +2742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1331974599}
   - component: {fileID: 1331974600}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundCollider5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2834,7 +2897,7 @@ GameObject:
   - component: {fileID: 1473595215}
   - component: {fileID: 1473595217}
   - component: {fileID: 1473595216}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlatformCollider (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2905,7 +2968,7 @@ EdgeCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
@@ -2925,7 +2988,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1521381274}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Jump Through Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2967,7 +3030,7 @@ GameObject:
   - component: {fileID: 1694747566}
   - component: {fileID: 1694747568}
   - component: {fileID: 1694747567}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlatformCollider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3038,7 +3101,7 @@ EdgeCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
@@ -3060,7 +3123,7 @@ GameObject:
   - component: {fileID: 1715760574}
   - component: {fileID: 1715760576}
   - component: {fileID: 1715760575}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlatformCollider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3131,7 +3194,7 @@ EdgeCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
@@ -3152,7 +3215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1721706540}
   - component: {fileID: 1721706541}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ExtrusionCollider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3229,7 +3292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1790858712}
   - component: {fileID: 1790858713}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundCollider3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3583,7 +3646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1867967889}
   - component: {fileID: 1867967890}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ExtrusionCollider2.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3650,6 +3713,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.6, y: 2.5}
   m_EdgeRadius: 0
+--- !u!1 &1956308951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1956308952}
+  m_Layer: 0
+  m_Name: PlayerFireRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1956308952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956308951}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 549573289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1979709147
 GameObject:
   m_ObjectHideFlags: 0
@@ -3660,7 +3754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1979709148}
   - component: {fileID: 1979709149}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundCollider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3727,6 +3821,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.35, y: 2.4}
   m_EdgeRadius: 0
+--- !u!1 &2008509766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2008509767}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2008509767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008509766}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 549573289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2034040301
 GameObject:
   m_ObjectHideFlags: 0
