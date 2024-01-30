@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform GroundCheck;
     [SerializeField] private LayerMask isGroundLayer;
     [SerializeField] private float groundCheckRadius = 0.02f;
+    [SerializeField] private bool isAirAttack;
+    [SerializeField] private bool isAttack;
 
 
 
@@ -62,14 +64,39 @@ public class PlayerController : MonoBehaviour
         float xInput = Input.GetAxisRaw("Horizontal");
         float yInput = Input.GetAxisRaw("Vertical");
 
+        if (isGrounded)
+        {
+            rb.gravityScale = 1;
+            anim.ResetTrigger("JumpAtk");
+        }
+
+        AnimatorClipInfo[] clipInfo = anim.GetCurrentAnimatorClipInfo(0);
+
         isGrounded = Physics2D.OverlapCircle(GroundCheck.position, groundCheckRadius, isGroundLayer);
-        
+
+        if (clipInfo[0].clip.name == "Attack")
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(xInput *speed, rb.velocity.y);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                anim.SetTrigger("Throw");
+            }
+        }
 
         rb.velocity = new Vector2(xInput * speed, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
+        }
+
+        if (Input.GetButtonDown("Jump") && !isGrounded)
+        {
+            anim.SetTrigger("JumpAtk");
         }
 
         if (rb.velocity.y < 0.1) isFalling = true;
@@ -79,9 +106,59 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("IsFalling", isFalling);
         anim.SetFloat("Speed", Mathf.Abs(xInput));
         
+        
 
         // Flip sprite if going left
         if (xInput != 0) sr.flipX = (xInput < 0);
 
     }
+    public void IncreaseGravity()
+    {
+        rb.gravityScale = 4;
+    }
+
+    // Trigger functions are called most other times - but would still require at least one object to be physics enabled
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+
+    }
+
+    // Collision functions are only called - when one of the two objects is a dynamic rigidbody
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        
+    }
 }
+
+/*
+public class AirAttackStateMachineBehaviour : StateMachineBehaviour
+{
+    // This function is called when the state is exited.
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        // Check if the current state is the AirAttack state.
+        if (stateInfo.IsName("AirAttack"))
+        {
+            // Trigger your custom event or function when the AirAttack animation finishes.
+            animator.SetTrigger("AirAttackFinished");
+        }
+    }
+}
+*/

@@ -992,7 +992,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_42
+      name: mario_attack_air
       rect:
         serializedVersion: 2
         x: 428
@@ -1097,7 +1097,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_47
+      name: mario_attack_ground1
       rect:
         serializedVersion: 2
         x: 61
@@ -1118,7 +1118,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_48
+      name: mario_attack_ground2
       rect:
         serializedVersion: 2
         x: 79
@@ -1139,7 +1139,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_49
+      name: mario_attack_ground3
       rect:
         serializedVersion: 2
         x: 97
@@ -1223,7 +1223,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_53
+      name: mario_air_attack1
       rect:
         serializedVersion: 2
         x: 185
@@ -1244,7 +1244,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_54
+      name: mario_air_attack2
       rect:
         serializedVersion: 2
         x: 218
@@ -1265,7 +1265,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_55
+      name: mario_air_attack3
       rect:
         serializedVersion: 2
         x: 253
@@ -1286,7 +1286,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_56
+      name: mario_air_attack4
       rect:
         serializedVersion: 2
         x: 286
@@ -1307,7 +1307,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_57
+      name: mario_air_attack5
       rect:
         serializedVersion: 2
         x: 315
@@ -1328,7 +1328,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_58
+      name: mario_air_attack6
       rect:
         serializedVersion: 2
         x: 345
@@ -1432,25 +1432,25 @@ TextureImporter:
       Sprite_Mario_39: 866536989
       Sprite_Mario_40: -479148309
       Sprite_Mario_41: 1326231090
-      Sprite_Mario_42: -1323153248
       Sprite_Mario_43: 17869431
       Sprite_Mario_44: 1194594072
       Sprite_Mario_45: 2053769270
       Sprite_Mario_46: 924771180
-      Sprite_Mario_47: -755790121
-      Sprite_Mario_48: -1433604426
-      Sprite_Mario_49: -330190813
       Sprite_Mario_50: -1911312637
       Sprite_Mario_51: -969093637
       Sprite_Mario_52: 1908895256
-      Sprite_Mario_53: 2133843340
-      Sprite_Mario_54: -2045217348
-      Sprite_Mario_55: 684626566
-      Sprite_Mario_56: -934854851
-      Sprite_Mario_57: 2143194945
-      Sprite_Mario_58: 2116310605
       Sprite_Mario_59: 529956489
       Sprite_Mario_60: 826325612
+      mario_air_attack1: 2133843340
+      mario_air_attack2: -2045217348
+      mario_air_attack3: 684626566
+      mario_air_attack4: -934854851
+      mario_air_attack5: 2143194945
+      mario_air_attack6: 2116310605
+      mario_attack_air: -1323153248
+      mario_attack_ground1: -755790121
+      mario_attack_ground2: -1433604426
+      mario_attack_ground3: -330190813
       mario_fall: -255000792
       mario_finish: -2048967047
       mario_idle: 1836637810

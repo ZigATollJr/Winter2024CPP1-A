@@ -2021,7 +2021,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_92
+      name: PlayerProjectile
       rect:
         serializedVersion: 2
         x: 199
@@ -14526,6 +14526,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      PlayerProjectile: 1590258604
       Sprite_Enemies_10: -478531722
       Sprite_Enemies_100: -708473601
       Sprite_Enemies_101: 733325542
@@ -15189,7 +15190,6 @@ TextureImporter:
       Sprite_Enemies_89: -2035552963
       Sprite_Enemies_90: -1073171104
       Sprite_Enemies_91: 1809131438
-      Sprite_Enemies_92: 1590258604
       Sprite_Enemies_93: -225674382
       Sprite_Enemies_94: 158756456
       Sprite_Enemies_95: -795245834

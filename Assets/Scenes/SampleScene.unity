@@ -379,7 +379,7 @@ Transform:
   m_GameObject: {fileID: 62623754}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: -0.467, y: 0.637, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1588,11 +1588,14 @@ MonoBehaviour:
   speed: 5
   jumpforce: 7
   isGrounded: 0
+  isFalling: 0
   GroundCheck: {fileID: 0}
   isGroundLayer:
     serializedVersion: 2
     m_Bits: 8
   groundCheckRadius: 0.02
+  isAirAttack: 0
+  isAttack: 0
 --- !u!95 &549573291
 Animator:
   serializedVersion: 5
@@ -3738,7 +3741,7 @@ Transform:
   m_GameObject: {fileID: 1956308951}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0.363, y: 0.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
