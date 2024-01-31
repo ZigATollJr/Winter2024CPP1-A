@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
             lifeTime = 2.0f;
             if (TestMode) Debug.Log("LifeTime <= 0! Object defaulted to 2.0f seconds: " + gameObject.name);
         }
-        GetComponent<Rigidbody2D>().velocity = new Vector2(speed, speed);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(speed, Mathf.Abs(speed/2));
         Destroy(gameObject, lifeTime);
     }
 

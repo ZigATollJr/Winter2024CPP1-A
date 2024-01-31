@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
             if (TestMode) Debug.Log("GroundCheck radius was <= 0, defaulted to 0.2f: " + gameObject.name);
         }
         if (GroundCheck == null)
-        {
+        { 
             GameObject obj = new GameObject();
             obj.transform.SetParent(gameObject.transform);
             obj.transform.localPosition = Vector3.zero;
@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
     // Collision functions are only called - when one of the two objects is a dynamic rigidbody
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
